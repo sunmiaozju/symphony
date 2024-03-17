@@ -493,10 +493,10 @@ public class UserMgmtService {
                     user.put(UserExt.USER_AVATAR_URL, specifiedAvatar);
                 } else {
                     try {
-                        byte[] avatarData;
+                        byte[] avatarData = null;
 
                         final String hash = DigestUtils.md5Hex(ret);
-                        avatarData = Gravatars.getRandomAvatarData(hash); // https://github.com/b3log/symphony/issues/569
+//                        avatarData = Gravatars.getRandomAvatarData(hash); // https://github.com/b3log/symphony/issues/569
                         if (null == avatarData) {
                             final BufferedImage img = avatarQueryService.createAvatar(hash, 512);
                             final ByteArrayOutputStream baos = new ByteArrayOutputStream();
